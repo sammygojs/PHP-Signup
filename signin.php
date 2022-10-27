@@ -1,42 +1,5 @@
-<?php
-include("partials/connect.php");
-if(isset($_POST['register'])){
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $confirm_password = $_POST['confirm_password'];
-
-    // Query exists
-    $Select_data="Select * from `user_data` where username='$username'";
-    $result=mysqli_query($con,$Select_data);
-    $num_rows=mysqli_num_rows($result);
-
-    if($username=="" or $password=="" or $confirm_password=""){
-        echo "<script>alert('You have to fill all the fields')</script>";
-        echo "<script>window.open('index.php','_self')</script>";
-        exit();
-    }
-
-    if($num_rows>0){
-        echo "<script>alert('username already exists')</script>";
-        echo "<script>window.open('index.php','_self')</script>";
-        exit();
-    }
-
-    if($password!=$confirm_password){
-        echo "<script>alert('Passwords do not match')</script>";
-    }else{
-        $insert_query="insert into `user_data` (username,password) values ('$username','$confirm_password')";
-        $result=mysqli_query($con, $insert_query);
-        if($result){
-            echo "<script>alert('You have registered succesfully')</script>";
-            echo "<script>window.open('signin.php','_self')</script>";
-        }
-    }
-}
-
-?>
-
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -57,11 +20,11 @@ if(isset($_POST['register'])){
         <div class="card">
         <!-- card header -->
         <div class="card-header">
-            <h3 class="text-center">Sign up</h3>
+            <h3 class="text-center">Sign in</h3>
         </div>
         <!-- card body -->
         <div class="card-body">
-            <form action="" method="post">
+            <form action="">
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1"><i> <div class="fa-solid fa-user"></div></i></span>
@@ -74,23 +37,17 @@ if(isset($_POST['register'])){
                 </div>
                 <input type="password" class="form-control" placeholder="Enter your password" required="required" autocomplete="off" name="password" aria-label="Username" aria-describedby="basic-addon1">
             </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1"><i> <div class="fas fa-lock"></div></i></span>
-                </div>
-                <input type="password" class="form-control" placeholder="Confirm password" required="required" autocomplete="off" name="confirm_password" aria-label="Username" aria-describedby="basic-addon1">
-            </div>
             <!-- signup button -->
             <div class="form-group">
-                <input type="submit" name="register" value="Sign up">
+                <input type="submit" name="signin" value="Sign in">
             </div>
             </form>
             
         </div>
         <!-- card footer -->
         <div class="card-footer text-center">
-            Already have an account?
-            <a href="signin.php">Sign in</a>
+            Don't have an account?
+            <a href="index.php">Sign up</a>
         </div>
 </div>
     </div>
