@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,6 +16,46 @@
 <link rel="stylesheet" href="css/styles.css">
 
 <body>
-    <h1>Hello page</h1>
+    <div class="container">
+        <div class="card">
+        <!-- card header -->
+        <div class="card-header">
+            <h3 class="text-center">Sign up</h3>
+        </div>
+        <!-- card body -->
+        <div class="card-body">
+            <form action="">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i> <div class="fa-solid fa-user"></div></i></span>
+                </div>
+                <input type="text" class="form-control" placeholder="Enter your username" required="required" autocomplete="off" name="username" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i> <div class="fas fa-key"></div></i></span>
+                </div>
+                <input type="password" class="form-control" placeholder="Enter your password" required="required" autocomplete="off" name="password" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i> <div class="fas fa-lock"></div></i></span>
+                </div>
+                <input type="password" class="form-control" placeholder="Confirm password" required="required" autocomplete="off" name="confirm_password" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <!-- signup button -->
+            <div class="form-group">
+                <input type="submit" name="register">
+            </div>
+            </form>
+            
+        </div>
+        <!-- card footer -->
+        <div class="card-footer text-center">
+            Already have an account? sign in
+        </div>
+</div>
+    </div>
 </body>
+
 </html>
